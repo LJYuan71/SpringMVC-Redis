@@ -29,7 +29,7 @@
 ##### 数据库请求图：可以通过eclipse控制台看出。只有前3次的请求连接了数据库查询,后面发起请求也不再去数据库中查找（缓存）<br>
 ![浏览器请求](https://github.com/LJYuan71/SpringMVC-Redis/raw/master/src/main/webapp/images/后台数据库查询情况.png "数据库请求情况图")
 ##### Redis存储请求参数和数据情况<br>
-![浏览器请求](https://github.com/LJYuan71/SpringMVC-Redis/raw/master/src/main/webapp/images/请求参数存储.png "方法参数Redis")
+![浏览器请求](https://github.com/LJYuan71/SpringMVC-Redis/raw/master/src/main/webapp/images/redis请求参数存储.png "方法参数Redis")<br/>
 ![浏览器请求](https://github.com/LJYuan71/SpringMVC-Redis/raw/master/src/main/webapp/images/redis参数对应数据存储.png "方法对应参数的数据图")
 ## 存取测试
 存取可以在任意地方一次或多次调用,内容类型任意。 详情到ExampleServiceImpl.setAndGetDataFromRedis()方法中查看
