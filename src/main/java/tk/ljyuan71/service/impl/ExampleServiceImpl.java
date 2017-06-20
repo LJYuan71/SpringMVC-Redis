@@ -11,6 +11,8 @@ import javax.annotation.Resource;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Propagation;
+import org.springframework.transaction.annotation.Transactional;
 
 import tk.ljyuan71.bean.Example;
 import tk.ljyuan71.common.bean.Pager;
@@ -32,7 +34,7 @@ import tk.ljyuan71.service.ExampleService;
  *allEntries：true表示清除value中的全部缓存，默认为false
  */
 @Service
-//@Transactional(propagation = Propagation.REQUIRED, rollbackFor = Exception.class)
+@Transactional(propagation = Propagation.REQUIRED, rollbackFor = Exception.class)//注解形式的事务管理
 public class ExampleServiceImpl implements ExampleService {
 
     @Autowired
