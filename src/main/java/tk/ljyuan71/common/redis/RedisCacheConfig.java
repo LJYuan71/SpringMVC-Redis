@@ -53,11 +53,16 @@ public class RedisCacheConfig extends CachingConfigurerSupport {
             @Override
             public Object generate(Object o, Method method, Object... objects) {
                 StringBuilder sb = new StringBuilder();
-                sb.append(o.getClass().getName());
-                sb.append(method.getName());
-                for (Object obj : objects) {
-                    sb.append(obj.toString());
-                }
+                //sb.append(o.getClass().getName());
+                String declaringClass = method.getDeclaringClass().toString();
+                sb.append(declaringClass.split(" ")[1]);
+                sb.append("."+method.getName());
+                for (int i = 0; i < objects.length; i++) {
+					if(i == 0){
+						sb.append(":");
+					}
+					 sb.append(objects[i].toString());
+				}
                 return sb.toString();
             }
         };

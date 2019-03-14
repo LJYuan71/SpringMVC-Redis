@@ -118,5 +118,16 @@
         <constructor-arg ref="redisTemplate"/>
         <constructor-arg ref="redisCacheManager"/>
     </bean>
+    <!-- redis分布式session -->
+    <!-- 为不同项目设置不同的cookie键值，避免产生host:端口部署不同项目产生覆盖cookie的问题 -->
+	<bean id="cookieSerializer" class="org.springframework.session.web.http.DefaultCookieSerializer">
+		<property name="cookieName" value="MVC_SESSION"></property>
+	</bean>
+	
+	<bean class="org.springframework.session.data.redis.config.annotation.web.http.RedisHttpSessionConfiguration">
+        <property name="maxInactiveIntervalInSeconds" value="1800"></property>
+        <property name="redisNamespace" value="tk_liyuan"></property>
+        <property name="cookieSerializer" ref="cookieSerializer"></property>
+	</bean>
 
 </beans>

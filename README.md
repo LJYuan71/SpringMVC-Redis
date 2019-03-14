@@ -11,9 +11,11 @@
 
 
 ### CN
-* Spring整合Redis进行缓存
+* Spring4整合Redis进行缓存
 * 使用Spring Data Redis注解管理缓存
 * 使用redisTemplate对Redis进行主动存取
+* redis分布式锁
+* redis分布式session
 
 ## 项目运行方法：
 1.Redis正常运行且正确配置连接<br/>

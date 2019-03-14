@@ -45,7 +45,7 @@
             
             </table>
             <h3>Redis存取例子</h3>
-            <button class="btn" onclick="setAndGetDataFromRedis();">设置和获取</button>&nbsp;&nbsp;
+            <button class="btn btn-info" onclick="setAndGetDataFromRedis();">设置和获取</button>&nbsp;&nbsp;
             <span>后台请到ExampleServiceImpl.setAndGetDataFromRedis()中查看</span>
             <div>
                 <textarea id="redisData" rows="8" cols="140"></textarea>
@@ -186,7 +186,7 @@
     	$.ajax({   
 	        type: 'POST',   
 	        async:true,
-	        url: "http://localhost:8080/SpringMVC-Redis/setAndGetDataFromRedis.do",//请求的action路径    
+	        url: "example/setAndGetDataFromRedis.do",//请求的action路径    
 	        success:function(data){ //请求成功后处理函数。 
 	        	//var ret = eval("("+data+")");
 	        	var jsonStr = JSON.stringify(data);
